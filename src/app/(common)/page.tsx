@@ -1,12 +1,17 @@
-import Banner from "@/components/modules/home/Banner/Banner";
-import React from "react";
+import SingleCoursePage from "@/components/modules/common/SingleCoursePage";
+import { CourseService } from "@/services/CourseService";
+import { Course } from "@/types/course";
+import { cookies } from "next/headers";
 
-const page = () => {
+const Page = async () => {
+  const cookieStore = await cookies();
+  const lang = (cookieStore.get("lang")?.value ?? "en") as "en" | "bn";
+  const courseData: Course = await CourseService.getCourse(lang);
   return (
     <div>
-      <Banner />
+      <SingleCoursePage courseData={courseData} />
     </div>
   );
 };
 
-export default page;
+export default Page;

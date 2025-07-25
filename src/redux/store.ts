@@ -6,6 +6,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import createWebStorage from "redux-persist/lib/storage/createWebStorage";
 import { persistReducer, persistStore, FLUSH, PAUSE, PERSIST, PURGE, REGISTER, REHYDRATE } from "redux-persist";
 import authReducer from "./features/auth/authSlice";
+import languageReducer from "./features/language/languageSlice";
 import { baseApi } from "./api/baseApi";
 
 const createNoopStorage = () => {
@@ -28,14 +29,20 @@ const persistAuthConfig = {
   key: "auth",
   storage,
 };
+const persistLanguageConfig = {
+  key: "language",
+  storage,
+};
 
 const persistedAuthReducer = persistReducer(persistAuthConfig, authReducer);
+const persistedLanguageReducer = persistReducer(persistLanguageConfig, languageReducer);
 
 export const makeStore = () => {
   return configureStore({
     reducer: {
       [baseApi.reducerPath]: baseApi.reducer,
       auth: persistedAuthReducer,
+      language: persistedLanguageReducer,
     },
     middleware: (getDefaultMiddlewares) =>
       getDefaultMiddlewares({
