@@ -26,14 +26,14 @@ interface OldInfo {
   slug: string;
 }
 
-interface MediaItem {
+export interface MediaItem {
   name: string;
   resource_type: "video" | "image";
   resource_value: string;
   thumbnail_url?: string;
 }
 
-interface ChecklistItem {
+export interface ChecklistItem {
   color: string;
   icon: string;
   id: string;
@@ -41,12 +41,12 @@ interface ChecklistItem {
   text: string;
 }
 
-interface CtaText {
+export interface CtaText {
   name: string;
   value: string;
 }
 
-interface Section {
+export interface Section {
   type: string;
   name: string;
   description: string;
@@ -55,7 +55,7 @@ interface Section {
   values: any[] | SectionValue[];
 }
 
-type SectionValue =
+export type SectionValue =
   | OfferValue
   | InstructorValue
   | FeatureValue
@@ -65,7 +65,7 @@ type SectionValue =
   | TestimonialValue
   | FaqValue;
 
-interface OfferValue {
+export interface OfferValue {
   background_color: string;
   background_img: string;
   checklist_text_color: string;
@@ -76,7 +76,7 @@ interface OfferValue {
   text: string;
 }
 
-interface InstructorValue {
+export interface InstructorValue {
   description: string;
   has_instructor_page: boolean;
   image: string;
@@ -85,14 +85,14 @@ interface InstructorValue {
   slug: string;
 }
 
-interface FeatureValue {
+export interface FeatureValue {
   icon: string;
   id: string;
   subtitle: string;
   title: string;
 }
 
-interface GroupJoinEngagementValue {
+export interface GroupJoinEngagementValue {
   background: {
     image: string;
     primary_color: string;
@@ -112,14 +112,14 @@ interface GroupJoinEngagementValue {
   top_left_icon_img: string;
 }
 
-interface PointerValue {
+export interface PointerValue {
   color: string;
   icon: string;
   id: string;
   text: string;
 }
 
-interface FeatureExplanationValue {
+export interface FeatureExplanationValue {
   checklist: string[];
   file_type: string;
   file_url: string;
@@ -128,7 +128,7 @@ interface FeatureExplanationValue {
   video_thumbnail: string;
 }
 
-interface TestimonialValue {
+export interface TestimonialValue {
   description: string;
   id: string;
   name: string;
@@ -139,7 +139,7 @@ interface TestimonialValue {
   video_url: string;
 }
 
-interface FaqValue {
+export interface FaqValue {
   answer: string;
   id: string;
   question: string;

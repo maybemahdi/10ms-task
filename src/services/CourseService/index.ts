@@ -2,7 +2,7 @@ const getCourse = async (language?: "en" | "bn") => {
   try {
     const response = await fetch(
       `https://api.10minuteschool.com/discovery-service/api/v1/products/ielts-course?lang=${
-        language || "en"
+        language ?? "en"
       }`,
       {
         method: "GET",
