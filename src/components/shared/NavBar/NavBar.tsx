@@ -11,7 +11,7 @@ const NavBar = () => {
   const activeLanguage = useAppSelector(selectCurrentLanguage);
   const dispatch = useAppDispatch();
   return (
-    <nav className="sticky top-0 bg-white">
+    <nav className="sticky top-0 bg-white z-[1000]">
       <MyContainer className="flex items-center justify-between py-4 text-slate-800">
         <h2 className="text-xl font-bold">10 minute school</h2>
         <button

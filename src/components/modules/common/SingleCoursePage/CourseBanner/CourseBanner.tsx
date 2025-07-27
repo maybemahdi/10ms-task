@@ -37,11 +37,11 @@ export default function CourseBanner({
         </h1>
 
         {/* Rating Section */}
-        <div className="flex items-center gap-3 mb-6">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-3 mb-6">
           <StarRating />
-          <span className="text-lg font-medium">
+          <p className="text-lg font-medium">
             (82.6% সিক্ষার্থী কোর্স শেষে ৫ রেটিং দিয়েছেন)
-          </span>
+          </p>
         </div>
 
         {/* Description */}

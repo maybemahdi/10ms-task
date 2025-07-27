@@ -1,5 +1,10 @@
-import { FileTextIcon, MessageSquareIcon, PlayIcon, TrophyIcon } from "lucide-react";
-
+import { FeatureValue, Section } from "@/types/course";
+import {
+  FileTextIcon,
+  MessageSquareIcon,
+  PlayIcon,
+  TrophyIcon,
+} from "lucide-react";
 
 const courseFeatures = [
   {
@@ -32,37 +37,44 @@ const courseFeatures = [
   },
 ];
 
-export default function HowTheCourseIsLaidOut() {
+export default function HowTheCourseIsLaidOut({
+  featuresSection,
+}: {
+  featuresSection: Section;
+}) {
   return (
     <div className="max-w-4xl w-full mx-auto">
       {/* Section Title */}
       <h2 className="text-2xl font-bold text-gray-900 mb-6">
-        How the course is laid out
+        {featuresSection?.name}
       </h2>
 
       {/* Course Features Grid */}
       <div className="bg-gray-900 rounded-lg p-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {courseFeatures.map((feature, index) => (
-            <div key={index} className="flex items-start gap-4">
-              {/* Icon */}
-              <div
-                className={`${feature.iconColor} rounded-full p-3 flex-shrink-0`}
-              >
-                <feature.icon className="w-6 h-6 text-white" />
-              </div>
+          {featuresSection?.values?.map((value, index: number) => {
+            const feature = value as FeatureValue;
+            return (
+              <div key={index} className="flex items-start gap-4">
+                {/* Icon */}
+                <div
+                  className={`rounded-full p-3 flex-shrink-0`}
+                >
+                  <img src={feature.icon} alt="" />
+                </div>
 
-              {/* Content */}
-              <div className="flex-1">
-                <h3 className="text-white font-semibold text-lg mb-2">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-300 text-sm leading-relaxed">
-                  {feature.description}
-                </p>
+                {/* Content */}
+                <div className="flex-1">
+                  <h3 className="text-white font-semibold text-lg mb-2">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-300 text-sm leading-relaxed">
+                    {feature.subtitle}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </div>

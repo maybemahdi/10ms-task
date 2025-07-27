@@ -46,13 +46,11 @@ export default function CourseInstructors({
 
                 {/* Credentials */}
                 <div className="space-y-1 text-gray-700">
-                  <p>
-                    <div
-                      dangerouslySetInnerHTML={{
-                        __html: instructor.description ?? "",
-                      }}
-                    />
-                  </p>
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: instructor.description ?? "",
+                    }}
+                  />
                 </div>
               </div>
             </div>

@@ -119,6 +119,13 @@ export interface PointerValue {
   text: string;
 }
 
+export interface CourseDetailsValue {
+  description: string;
+  icon: string;
+  id: string;
+  title: string;
+}
+
 export interface FeatureExplanationValue {
   checklist: string[];
   file_type: string;

@@ -23,6 +23,7 @@ export default {
       },
       screens: {
         xs: "540px", 
+        courseXL: "1700px",
       },
     },
   },
